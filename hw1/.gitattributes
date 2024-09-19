@@ -1,0 +1,2 @@
+hw4/pagerank/EdgeList.txt filter=lfs diff=lfs merge=lfs -text
+hw3/output/fulldata/output_sorted.txt filter=lfs diff=lfs merge=lfs -text

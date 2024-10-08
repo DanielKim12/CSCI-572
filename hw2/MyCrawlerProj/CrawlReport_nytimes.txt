@@ -1,0 +1,42 @@
+Name: GUK IL KIM
+USC ID: 3020867072
+News site crawled: nytimes.com
+Number of threads: 15
+
+Fetch Statistics
+================
+# fetches attempted: 19275
+# fetches succeeded: 18521
+# fetches failed or aborted: 754
+
+Outgoing URLs:
+==============
+Total URLs extracted: 1742815
+# unique URLs extracted: 150403
+# unique URLs within News Site: 63968
+# unique URLs outside News Site: 86435
+
+Status Codes:
+=============
+200 OK: 18521
+301 Moved Permanently: 726
+401 Unauthorized: 0
+403 Forbidden: 1
+404 Not Found: 9
+
+File Sizes:
+===========
+<1KB: 0
+1KB ~ <10KB: 3
+10KB ~ <100KB: 91
+100KB ~ <1MB: 14180
+>=1MB: 109
+
+
+Content Types:
+==============
+text/html: 0
+image/gif: 0
+image/jpeg: 0
+image/png: 0
+application/pdf: 0

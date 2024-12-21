@@ -1,0 +1,18 @@
+I have switched form llama3 to llama3.2 as it is the latest update. 
+
+code: 
+if st.button("Send"):
+        if user_input:
+            messages = [{"role": "user", "content": user_input}]
+
+            # columns for side-by-side display
+            col1, col2 = st.columns(2)
+
+            # first
+            with col1:
+                st.subheader("llama3.2")
+                try:
+                    response = completion(model="ollama/llama3.2", messages=messages)
+                    st.write(response.choices[0].message.content)
+                except Exception as e:
+                    st.error(f"Error: {str(e)}")

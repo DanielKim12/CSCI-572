@@ -1,0 +1,16 @@
+RAG-PDF-CHATBOT
+
+work-flow: 
+The user uploads one or more PDF documents through the Gradio UI (gr.Files component). The backend then processes the files using load_doc() to load and extract content from the PDFs. The PyPDFLoader extracts text content from the uploaded files, while the RecursiveCharacterTextSplitter splits the text into manageable chunks. This ensures that the chunks are small enough for efficient processing by the vectorization system.
+
+Next, the text chunks are converted into vectors, and a FAISS vector database is created for similarity-based retrieval. The user then selects an LLM with specific parameters, and the ConversationalRetrievalChain is initialized. Once this setup is complete, the chatbot becomes active, and the user can submit questions or queries through the Gradio chatbot.
+
+Submitted queries are used to filter relevant document chunks, retrieve them from the vector database, and pass them to the LLM for processing. The LLM generates a response based on the given query, the retrieved chunks, and the chat history. The response includes both the answer and references to the source document.
+
+Finally, the response is displayed in the chatbot, along with relevant document snippets and their corresponding page numbers. The user can ask follow-up questions, and the conversation context is preserved using memory.
+
+Gradio UI:
+1. file component (doc upload) - gr.Files, once user uploads pdf files, the db_btn will trigger initialize_databse() to split text and create vectore DB. 
+2. LLM initialization (input para) - gr.Radio, allows user to select parameters. gr.Slider, sets param (temp, max tokens, and top-k). qachain_btn button triggers initialize_LLM() to set up the QA chain with the selected LLM and vectore DB. 
+3. chat interaction (query input) - gr.Textbox, input queries. gr.Button, submits query to conversation(). gr.Chatbot, displays response. gr.Textbox/Number, shows retrieved document snippets and page numbers. 
+4. conversation reset - gr.ClearButton, clears history and doc references. 
